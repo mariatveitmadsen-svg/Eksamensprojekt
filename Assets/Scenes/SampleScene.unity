@@ -200,7 +200,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.45911938, g: 0.16951706, b: 0.15448354, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -372,9 +372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b8c587765cacf4d8f56e417d5c34b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 5
+  speed: 7
   bulletPrefab: {fileID: 8304198433290265873, guid: ce412c231a0ecaf47bbd8d2e99fbce75, type: 3}
   firingPoint: {fileID: 1073182183}
+  fireRate: 0.5
 --- !u!50 &764805916
 Rigidbody2D:
   serializedVersion: 5
