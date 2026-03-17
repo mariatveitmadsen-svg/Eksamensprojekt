@@ -2,35 +2,56 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D body;
+    [SerializeField] private float speed = 5f;
 
-    float horizontal;
-    float vertical;
-    float moveLimiter = 0.7f;
+    //Gun variables
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firingPoint;
+    [Range(0.1f, 2f)]
+    [SerializeField] private float fireRate = 0.5f;
 
-    public float runSpeed = 20.0f;
+    private Rigidbody2D rb;
+    private float mx;
+    private float my;
+
+    private float fireTimer;
+
+    private Vector2 mousePos;
 
     private void Start()
     {
-        body = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-    }
+        mx = Input.GetAxisRaw("Horizontal");
+        my = Input.GetAxisRaw("Vertical");
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-    void FixedUpdate()
-    {
-        if (horizontal != 0 && vertical != 0)
+        float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg - 90f;
+
+        transform.localRotation = Quaternion.Euler(0, 0, angle);
+
+        if (Input.GetMouseButton(0) && fireTimer <= 0f)
         {
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
+            Shoot();
+            fireTimer = fireRate;
         }
-
-        body.linearVelocity = new Vector2 (horizontal * runSpeed, vertical * runSpeed);
+        else
+        {
+            fireTimer -= Time.deltaTime;
+        }
+        
     }
 
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(mx, my).normalized * speed;
+    }
 
+    private void Shoot()
+    {
+        Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+    }
 }
