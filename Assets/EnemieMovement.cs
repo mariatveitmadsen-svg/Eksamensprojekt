@@ -10,6 +10,7 @@ public class EnemieMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void FixedUpdate()
     {

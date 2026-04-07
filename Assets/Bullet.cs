@@ -20,4 +20,12 @@ public class Bullet : MonoBehaviour
     {
         rb.linearVelocity = transform.up * speed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject); // destroy enemy
+            Destroy(gameObject); // destroy bullet
+        }
+    }
 }
