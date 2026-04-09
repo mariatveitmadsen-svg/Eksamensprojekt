@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6659596437955321474}
   - component: {fileID: 2798611898163688385}
   m_Layer: 0
-  m_Name: Ghost_1 1
+  m_Name: Ghost_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,9 +80,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1769679055
+  m_SortingLayer: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 6824852377700625651, guid: a2e3e9ea97b852f449ddcdfd25c2dba3, type: 3}
   m_Color: {r: 0.63207537, g: 1, b: 0.85813016, a: 1}
   m_FlipX: 0
