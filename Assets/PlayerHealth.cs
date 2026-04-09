@@ -8,5 +8,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Player health: " + health);
+        Healthbar.Instance.UpdateHealthBarValue(health);
     }
 }
