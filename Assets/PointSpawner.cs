@@ -6,11 +6,14 @@ public class PointSpawner : MonoBehaviour
 
     public int maxPoints = 3;
 
-    public BoxCollider2D mapBounds;
+    public float maxX = 42.3f;
+    public float minX = -32.1f;
+    public float maxY = 24f;
+    public float minY = -25.8f;
 
     private int currentPoints = 0;
 
-    private float minX, minY, maxX, maxY;
+    
 
     void Start()
     {
