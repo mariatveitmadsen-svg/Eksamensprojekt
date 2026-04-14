@@ -10,6 +10,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.gameOver)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
         if (timer >= spawnRate)
