@@ -31,10 +31,11 @@ public class ScoreManager : MonoBehaviour
 
         UpdateUI();
     }
-
+    
     void UpdateUI()
     {
         scoreText.text = "Score: " + score;
         highscoreText.text = "Highscore: " + highscore;
     }
+    
 }
