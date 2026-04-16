@@ -150,10 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   pointPrefab: {fileID: 3035868267629859116, guid: ef6691307e0e1214489486d5af06bf1d, type: 3}
   maxPoints: 6
-  maxX: 42.3
-  minX: -32.1
-  maxY: 24
-  minY: -25.8
+  maxX: 40
+  minX: -30
+  maxY: 22
+  minY: -23
 --- !u!4 &71925705
 Transform:
   m_ObjectHideFlags: 0
